@@ -12,6 +12,7 @@ namespace Targil4Bonus.Controller
     {
 
         public static DataTable dtbl = new DataTable();
+        public static DataTable dtb2 = new DataTable();
         public static SqlConnection sqlCon;
 
         public static void sqlConToSrv()
@@ -34,6 +35,19 @@ namespace Targil4Bonus.Controller
             SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.UpdateEmpSalaryBy5Per, sqlCon);
             sqlda.Fill(dtbl);
             return dtbl;
+        }
+
+        public static DataTable SearchEmpById(int myIdToSearch)
+        {
+            SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.SearchEmpById(myIdToSearch), sqlCon);
+            sqlda.Fill(dtbl);
+            return dtbl;
+        }
+        public static DataTable MissionsProByEmp(string valueToSearch)
+        {
+            SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.Query2MissionByEmpId(valueToSearch), sqlCon);
+            sqlda.Fill(dtb2);
+            return dtb2;
         }
     }
 }

@@ -12,9 +12,16 @@ namespace Targil4Bonus
 {
     public partial class CustomQuery : Form
     {
-        public CustomQuery()
+        string srchString;
+        public CustomQuery(string SearchPara)
         {
+            srchString = SearchPara;
             InitializeComponent();
+        }
+
+        private void CustomQuery_Load(object sender, EventArgs e)
+        {
+            dataGridView1CustomMissionsProj.DataSource = Controller.SqlCon.MissionsProByEmp(srchString);
         }
     }
 }

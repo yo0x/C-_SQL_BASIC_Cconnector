@@ -38,10 +38,7 @@ namespace Targil4Bonus
 
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void Button4ConnectToSrv_Click(object sender, EventArgs e)
         {
@@ -64,8 +61,8 @@ namespace Targil4Bonus
 
         private void Button1ShowAllEmpQ_Click(object sender, EventArgs e)
         {
-            //dataGridView1DataPro4u.Rows.Clear();
-            dataGridView1DataPro4u.Refresh();
+            dataGridView1DataPro4u.DataSource = null;
+            //dataGridView1DataPro4u.Refresh();
             if (SrvOn)
             {
                 dataGridView1DataPro4u.DataSource = Controller.SqlCon.ShowAllEmployees();
@@ -82,10 +79,11 @@ namespace Targil4Bonus
 
         private void Button3UpdateSalaryBy5_Click(object sender, EventArgs e)
         {
-            //dataGridView1DataPro4u.Rows.Clear();
-            dataGridView1DataPro4u.Refresh();
+            dataGridView1DataPro4u.DataSource = null;
+            //dataGridView1DataPro4u.Refresh();
             if (SrvOn)
             {
+
                 dataGridView1DataPro4u.DataSource = Controller.SqlCon.IncSalary5();
             }
             else
@@ -96,6 +94,28 @@ namespace Targil4Bonus
     MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void Button2SearchEmpById_Click(object sender, EventArgs e)
+        {
+            if (SrvOn)
+            {
+                dataGridView1DataPro4u.DataSource = Controller.SqlCon.SearchEmpById(Convert.ToInt32(textBox1SearchEmpById.Text));
+            }
+            else
+            {
+                MessageBox.Show("Connection Error",
+    "Please connect to Host",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void DataGridView1DataPro4u_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CustomQuery myCq = new CustomQuery(dataGridView1DataPro4u.Rows[e.RowIndex].Cells[0].Value.ToString());
+            myCq.ShowDialog();
         }
     }
 }

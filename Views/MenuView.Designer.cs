@@ -30,17 +30,17 @@
         {
             this.dataGridView1DataPro4u = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1SearchEmpById = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3UpdateSalaryBy5 = new System.Windows.Forms.Button();
+            this.button2SearchEmpById = new System.Windows.Forms.Button();
+            this.button1ShowAllEmpQ = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2SrvStatus = new System.Windows.Forms.Label();
-            this.button1ShowAllEmpQ = new System.Windows.Forms.Button();
-            this.button2SearchEmpById = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1SearchEmpById = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3UpdateSalaryBy5 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.button4ConnectToSrv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1DataPro4u)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -53,6 +53,7 @@
             this.dataGridView1DataPro4u.Name = "dataGridView1DataPro4u";
             this.dataGridView1DataPro4u.Size = new System.Drawing.Size(776, 248);
             this.dataGridView1DataPro4u.TabIndex = 0;
+            this.dataGridView1DataPro4u.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1DataPro4u_CellClick);
             // 
             // groupBox1
             // 
@@ -73,6 +74,92 @@
             this.groupBox1.Text = "Queries";
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 110);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Update Emp Salary by 5%";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 81);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(685, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "_________________________________________________________________________________" +
+    "________________________________";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(377, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Search emplooye by ID:";
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(22, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Show all Emplooyes query";
+            // 
+            // textBox1SearchEmpById
+            // 
+            this.textBox1SearchEmpById.Location = new System.Drawing.Point(483, 52);
+            this.textBox1SearchEmpById.Name = "textBox1SearchEmpById";
+            this.textBox1SearchEmpById.Size = new System.Drawing.Size(108, 20);
+            this.textBox1SearchEmpById.TabIndex = 2;
+            this.textBox1SearchEmpById.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(395, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "ID Employee:";
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
+            // 
+            // button3UpdateSalaryBy5
+            // 
+            this.button3UpdateSalaryBy5.Location = new System.Drawing.Point(25, 136);
+            this.button3UpdateSalaryBy5.Name = "button3UpdateSalaryBy5";
+            this.button3UpdateSalaryBy5.Size = new System.Drawing.Size(112, 34);
+            this.button3UpdateSalaryBy5.TabIndex = 0;
+            this.button3UpdateSalaryBy5.Text = "Update";
+            this.button3UpdateSalaryBy5.UseVisualStyleBackColor = true;
+            this.button3UpdateSalaryBy5.Click += new System.EventHandler(this.Button3UpdateSalaryBy5_Click);
+            // 
+            // button2SearchEmpById
+            // 
+            this.button2SearchEmpById.Location = new System.Drawing.Point(610, 44);
+            this.button2SearchEmpById.Name = "button2SearchEmpById";
+            this.button2SearchEmpById.Size = new System.Drawing.Size(112, 34);
+            this.button2SearchEmpById.TabIndex = 0;
+            this.button2SearchEmpById.Text = "Search";
+            this.button2SearchEmpById.UseVisualStyleBackColor = true;
+            this.button2SearchEmpById.Click += new System.EventHandler(this.Button2SearchEmpById_Click);
+            // 
+            // button1ShowAllEmpQ
+            // 
+            this.button1ShowAllEmpQ.Location = new System.Drawing.Point(22, 44);
+            this.button1ShowAllEmpQ.Name = "button1ShowAllEmpQ";
+            this.button1ShowAllEmpQ.Size = new System.Drawing.Size(112, 34);
+            this.button1ShowAllEmpQ.TabIndex = 0;
+            this.button1ShowAllEmpQ.Text = "Show Employees";
+            this.button1ShowAllEmpQ.UseVisualStyleBackColor = true;
+            this.button1ShowAllEmpQ.Click += new System.EventHandler(this.Button1ShowAllEmpQ_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -90,92 +177,6 @@
             this.label2SrvStatus.Size = new System.Drawing.Size(31, 13);
             this.label2SrvStatus.TabIndex = 2;
             this.label2SrvStatus.Text = "none";
-            // 
-            // button1ShowAllEmpQ
-            // 
-            this.button1ShowAllEmpQ.Location = new System.Drawing.Point(22, 44);
-            this.button1ShowAllEmpQ.Name = "button1ShowAllEmpQ";
-            this.button1ShowAllEmpQ.Size = new System.Drawing.Size(112, 34);
-            this.button1ShowAllEmpQ.TabIndex = 0;
-            this.button1ShowAllEmpQ.Text = "Show Employees";
-            this.button1ShowAllEmpQ.UseVisualStyleBackColor = true;
-            this.button1ShowAllEmpQ.Click += new System.EventHandler(this.Button1ShowAllEmpQ_Click);
-            // 
-            // button2SearchEmpById
-            // 
-            this.button2SearchEmpById.Location = new System.Drawing.Point(610, 44);
-            this.button2SearchEmpById.Name = "button2SearchEmpById";
-            this.button2SearchEmpById.Size = new System.Drawing.Size(112, 34);
-            this.button2SearchEmpById.TabIndex = 0;
-            this.button2SearchEmpById.Text = "Search";
-            this.button2SearchEmpById.UseVisualStyleBackColor = true;
-            this.button2SearchEmpById.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(395, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "ID Employee:";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
-            // 
-            // textBox1SearchEmpById
-            // 
-            this.textBox1SearchEmpById.Location = new System.Drawing.Point(483, 52);
-            this.textBox1SearchEmpById.Name = "textBox1SearchEmpById";
-            this.textBox1SearchEmpById.Size = new System.Drawing.Size(108, 20);
-            this.textBox1SearchEmpById.TabIndex = 2;
-            this.textBox1SearchEmpById.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Show all Emplooyes query";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(377, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Search emplooye by ID:";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Update Emp Salary by 5%";
-            // 
-            // button3UpdateSalaryBy5
-            // 
-            this.button3UpdateSalaryBy5.Location = new System.Drawing.Point(25, 136);
-            this.button3UpdateSalaryBy5.Name = "button3UpdateSalaryBy5";
-            this.button3UpdateSalaryBy5.Size = new System.Drawing.Size(112, 34);
-            this.button3UpdateSalaryBy5.TabIndex = 0;
-            this.button3UpdateSalaryBy5.Text = "Update";
-            this.button3UpdateSalaryBy5.UseVisualStyleBackColor = true;
-            this.button3UpdateSalaryBy5.Click += new System.EventHandler(this.Button3UpdateSalaryBy5_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 81);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(685, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "_________________________________________________________________________________" +
-    "________________________________";
             // 
             // button4ConnectToSrv
             // 
