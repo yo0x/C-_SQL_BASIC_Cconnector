@@ -13,6 +13,8 @@ namespace Targil4Bonus
     public partial class MenuView : Form
     {
         bool SrvOn = false;
+        BindingSource bSo = new BindingSource();
+
         public MenuView()
         {
             InitializeComponent();
@@ -38,34 +40,35 @@ namespace Targil4Bonus
 
         }
 
-     
+
 
         private void Button4ConnectToSrv_Click(object sender, EventArgs e)
         {
-            if(!SrvOn)
+            if (!SrvOn)
             {
                 button4ConnectToSrv.Text = "Disconnect from Server";
                 Controller.SqlCon.sqlConToSrv();
                 label2SrvStatus.Text = "Connected to 212.117.143.82";
                 SrvOn = true;
-            }else
+            }
+            else
             {
                 button4ConnectToSrv.Text = "Connect to Server";
                 Controller.SqlCon.CloseConn();
                 label2SrvStatus.Text = "Disconnected from 212.117.143.82";
                 SrvOn = false;
             }
-            
-            
+
+
         }
 
         private void Button1ShowAllEmpQ_Click(object sender, EventArgs e)
         {
-            dataGridView1DataPro4u.DataSource = null;
-            //dataGridView1DataPro4u.Refresh();
+
             if (SrvOn)
             {
-                dataGridView1DataPro4u.DataSource = Controller.SqlCon.ShowAllEmployees();
+                bSo.DataSource = Controller.SqlCon.ShowAllEmployees();
+                dataGridView1DataPro4u.DataSource = bSo;
             }
             else
             {
@@ -79,12 +82,12 @@ namespace Targil4Bonus
 
         private void Button3UpdateSalaryBy5_Click(object sender, EventArgs e)
         {
-            dataGridView1DataPro4u.DataSource = null;
-            //dataGridView1DataPro4u.Refresh();
+
             if (SrvOn)
             {
-
-                dataGridView1DataPro4u.DataSource = Controller.SqlCon.IncSalary5();
+                bSo.DataSource = Controller.SqlCon.IncSalary5();
+                bSo.DataSource = Controller.SqlCon.ShowAllEmployees();
+                dataGridView1DataPro4u.DataSource = bSo;
             }
             else
             {
@@ -100,6 +103,7 @@ namespace Targil4Bonus
         {
             if (SrvOn)
             {
+                updateData();
                 dataGridView1DataPro4u.DataSource = Controller.SqlCon.SearchEmpById(Convert.ToInt32(textBox1SearchEmpById.Text));
             }
             else
@@ -117,5 +121,53 @@ namespace Targil4Bonus
             CustomQuery myCq = new CustomQuery(dataGridView1DataPro4u.Rows[e.RowIndex].Cells[0].Value.ToString());
             myCq.ShowDialog();
         }
+        private void updateData()
+        {
+            dataGridView1DataPro4u.DataSource = null;
+            dataGridView1DataPro4u.Update();
+            dataGridView1DataPro4u.Refresh();
+        }
+
+        private void Button1Query3b_Click(object sender, EventArgs e)
+        {
+            if (SrvOn)
+            {
+                updateData();
+                dataGridView1DataPro4u.DataSource = Controller.SqlCon.Query3b();
+            }
+            else
+            {
+                MessageBox.Show("Connection Error",
+    "Please connect to Host",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Warning);
+            }
+
+
+        }
+
+        private void Button2Query4b_Click(object sender, EventArgs e)
+        {
+            if (SrvOn)
+            {
+                updateData();
+                dataGridView1DataPro4u.DataSource = Controller.SqlCon.Query4b();
+            }
+            else
+            {
+                MessageBox.Show("Connection Error",
+    "Please connect to Host",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Warning);
+            }
+
+
+        }
+
+        private void Button1ClearDataGrid_Click(object sender, EventArgs e)
+        {
+            dataGridView1DataPro4u.DataSource = null;
+        }
     }
 }
+

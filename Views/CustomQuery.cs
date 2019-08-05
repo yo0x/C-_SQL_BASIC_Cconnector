@@ -21,7 +21,15 @@ namespace Targil4Bonus
 
         private void CustomQuery_Load(object sender, EventArgs e)
         {
+
+            updateData();
             dataGridView1CustomMissionsProj.DataSource = Controller.SqlCon.MissionsProByEmp(srchString);
+        }
+        private void updateData()
+        {
+            dataGridView1CustomMissionsProj.DataSource = null;
+            dataGridView1CustomMissionsProj.Update();
+            dataGridView1CustomMissionsProj.Refresh();
         }
     }
 }

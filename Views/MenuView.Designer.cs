@@ -42,6 +42,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2SrvStatus = new System.Windows.Forms.Label();
             this.button4ConnectToSrv = new System.Windows.Forms.Button();
+            this.button1Query3b = new System.Windows.Forms.Button();
+            this.button2Query4b = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button1ClearDataGrid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1DataPro4u)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +62,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2Query4b);
+            this.groupBox1.Controls.Add(this.button1Query3b);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
@@ -188,11 +197,60 @@
             this.button4ConnectToSrv.UseVisualStyleBackColor = true;
             this.button4ConnectToSrv.Click += new System.EventHandler(this.Button4ConnectToSrv_Click);
             // 
+            // button1Query3b
+            // 
+            this.button1Query3b.Location = new System.Drawing.Point(318, 136);
+            this.button1Query3b.Name = "button1Query3b";
+            this.button1Query3b.Size = new System.Drawing.Size(100, 34);
+            this.button1Query3b.TabIndex = 4;
+            this.button1Query3b.Text = "Execute";
+            this.button1Query3b.UseVisualStyleBackColor = true;
+            this.button1Query3b.Click += new System.EventHandler(this.Button1Query3b_Click);
+            // 
+            // button2Query4b
+            // 
+            this.button2Query4b.Location = new System.Drawing.Point(622, 136);
+            this.button2Query4b.Name = "button2Query4b";
+            this.button2Query4b.Size = new System.Drawing.Size(100, 34);
+            this.button2Query4b.TabIndex = 4;
+            this.button2Query4b.Text = "Execute";
+            this.button2Query4b.UseVisualStyleBackColor = true;
+            this.button2Query4b.Click += new System.EventHandler(this.Button2Query4b_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(285, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Execute Query 3 from Targil 2 part b.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(542, 110);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(180, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Execute Query 4 from Targil 2 part b.";
+            // 
+            // button1ClearDataGrid
+            // 
+            this.button1ClearDataGrid.Location = new System.Drawing.Point(216, 26);
+            this.button1ClearDataGrid.Name = "button1ClearDataGrid";
+            this.button1ClearDataGrid.Size = new System.Drawing.Size(75, 23);
+            this.button1ClearDataGrid.TabIndex = 4;
+            this.button1ClearDataGrid.Text = "clear";
+            this.button1ClearDataGrid.UseVisualStyleBackColor = true;
+            this.button1ClearDataGrid.Click += new System.EventHandler(this.Button1ClearDataGrid_Click);
+            // 
             // MenuView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 555);
+            this.Controls.Add(this.button1ClearDataGrid);
             this.Controls.Add(this.button4ConnectToSrv);
             this.Controls.Add(this.label2SrvStatus);
             this.Controls.Add(this.label1);
@@ -224,6 +282,11 @@
         private System.Windows.Forms.Label label2SrvStatus;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4ConnectToSrv;
+        private System.Windows.Forms.Button button2Query4b;
+        private System.Windows.Forms.Button button1Query3b;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1ClearDataGrid;
     }
 }
 

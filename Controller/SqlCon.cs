@@ -22,6 +22,7 @@ namespace Targil4Bonus.Controller
         }
         public static DataTable ShowAllEmployees()
         {
+            DeleteTable(dtbl);
             SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.ShowAllEmpQuery, sqlCon);
             sqlda.Fill(dtbl);
             return dtbl;
@@ -32,6 +33,7 @@ namespace Targil4Bonus.Controller
         }
         public static DataTable IncSalary5()
         {
+            DeleteTable(dtbl);
             SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.UpdateEmpSalaryBy5Per, sqlCon);
             sqlda.Fill(dtbl);
             return dtbl;
@@ -39,15 +41,36 @@ namespace Targil4Bonus.Controller
 
         public static DataTable SearchEmpById(int myIdToSearch)
         {
+            DeleteTable(dtbl);
             SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.SearchEmpById(myIdToSearch), sqlCon);
             sqlda.Fill(dtbl);
             return dtbl;
         }
         public static DataTable MissionsProByEmp(string valueToSearch)
         {
+            DeleteTable(dtb2);
             SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.Query2MissionByEmpId(valueToSearch), sqlCon);
             sqlda.Fill(dtb2);
             return dtb2;
+        }
+        public static DataTable Query3b()
+        {
+            DeleteTable(dtbl);
+            SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.RunQuery3b, sqlCon);
+            sqlda.Fill(dtbl);
+            return dtbl;
+        }
+        public static DataTable Query4b()
+        {
+            DeleteTable(dtbl);
+            SqlDataAdapter sqlda = new SqlDataAdapter(Queries.QueriesToExecute.RunQuery4b, sqlCon);
+            sqlda.Fill(dtbl);
+            return dtbl;
+        }
+        public static void DeleteTable(DataTable dt)
+        {
+            dt.Rows.Clear();
+            dt.Clear();
         }
     }
 }
