@@ -101,10 +101,23 @@ namespace Targil4Bonus
 
         private void Button2SearchEmpById_Click(object sender, EventArgs e)
         {
+            DataTable tblTm;
             if (SrvOn)
             {
+
                 updateData();
-                dataGridView1DataPro4u.DataSource = Controller.SqlCon.SearchEmpById(Convert.ToInt32(textBox1SearchEmpById.Text));
+                tblTm = Controller.SqlCon.SearchEmpById(Convert.ToInt32(textBox1SearchEmpById.Text));
+                if (tblTm.Rows.Count > 0)
+                {
+                    dataGridView1DataPro4u.DataSource = tblTm;
+                }
+                else
+                {
+                    MessageBox.Show("Employee ID not valid, try again.","Attention!"
+    ,
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Warning);
+                }
             }
             else
             {
